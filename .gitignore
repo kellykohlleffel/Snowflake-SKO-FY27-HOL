@@ -1,0 +1,51 @@
+# Python Virtual Environments
+.venv/
+venv/
+env/
+
+# Python Cache
+__pycache__/
+*.py[cod]
+*.egg-info/
+
+# Credentials & Secrets
+.env
+.env.*
+!.env.example
+*.key
+*.pem
+credentials.json
+secrets.json
+
+# Snowflake
+snowflake_credentials.json
+accounts.toml
+connections.toml
+
+# dbt
+target/
+dbt_packages/
+logs/
+profiles.yml
+!profiles.yml.example
+
+# IDE & Editor Config
+.vscode/
+.idea/
+.claude/
+*.swp
+.DS_Store
+
+# Testing
+.pytest_cache/
+.coverage
+
+# Logs
+*.log
+
+# Data Files (potentially sensitive)
+*.csv
+*.parquet
+!**/examples/*.csv
+!schema.json
+!dbt_project.json
