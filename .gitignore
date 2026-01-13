@@ -49,3 +49,4 @@ profiles.yml
 !**/examples/*.csv
 !schema.json
 !dbt_project.json
+lab-credentials.html
