@@ -72,8 +72,47 @@ Welcome to the dbt Labs and Fivetran Hands-On Lab for Snowflake SKO FY27! In thi
 
 ## Step 2: Transform Data with dbt
 
-*Coming soon - instructor will guide this section*
+### 2.1 Register for dbt Cloud Workshop Account
 
+1. Navigate to the dbt Workshop registration page: [https://cloud.getdbt.com/coalesce-workshop-signup/](https://cloud.getdbt.com/coalesce-workshop-signup/)
+2. Fill in the registration form:
+   - **First Name**: Your first name
+   - **Last Name**: Your last name
+   - **Company Email**: Your email address
+   - **Workshop Selection**: Select **Snowflake SKO27 Hands-On Lab** from the dropdown
+   - **Workshop Passcode**: Enter the passcode from the [lab credentials page](https://fivetran-lab.web.app/lab-credentials.html)
+3. Click **Complete Registration** and wait for the success pop-up. It will include generated dbt Platform credentials for the workshop.
+4. Please record this crednetials for the reminder of the workshop, you may need them to log into dbt Platform.
+5. Click **Complete Registration** - if you are redirect to a login page use the automatically generated credentials above for access. 
+
+### 2.2 Access dbt Platform
+
+1. In dbt Platform, locate the **Project dropdown** on the left-hand side
+2. Select **Snowflake SKO (Higher Education)** from the dropdown
+3. Click **Studio** to load dbt Platform
+
+### 2.3 Explore dbt Packages Configuration
+
+1. In the **Project Navigator** (left sidebar), locate and open the `packages.yml` file
+2. Review the file contents and note how the `snowflake_semantic_view` package is defined
+   - This package enables dbt to create Snowflake Semantic Views
+3. For detailed information on this package and how it works, see: [https://hub.getdbt.com/Snowflake-Labs/dbt_semantic_view/latest/](https://hub.getdbt.com/Snowflake-Labs/dbt_semantic_view/latest/)
+
+**Understanding Package Management:**
+- When adding new packages, run `dbt deps` to install dependencies
+- This command creates or updates `package-lock.yml`, which records specific package versions
+- The lock file prevents compatibility issues when collaborating with other users
+
+### 2.4 Examine and Run dbt Models
+
+1. In the **Project Navigator**, expand the `models` folder
+2. Expand the `HED` subfolder (contains all Higher Education models)
+3. Open the `hed_at_risk_students.sql` file
+4. Review the code:
+   - This file contains the code to generate a Snowflake Semantic View
+   - Note how the syntax looks identical to executing it directly in Snowflake
+5. Click the **Run** button for this model to build it in your local Dev schema
+6. Wait for the model to complete successfully
 ---
 
 ## Need Help?
