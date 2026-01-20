@@ -111,8 +111,17 @@ Welcome to the dbt Labs and Fivetran Hands-On Lab for Snowflake SKO FY27! In thi
 4. Review the code:
    - This file contains the code to generate a Snowflake Semantic View
    - Note how the syntax looks identical to executing it directly in Snowflake
-5. Click the **Run** button for this model to build it in your local Dev schema
+5. Click the **Run +model (Upstream)** button for this model to build the semantic view and its upstream dependencies it in your local Dev schema
 6. Wait for the model to complete successfully
+
+### 2.5 Generate Tests with dbt Co-Pilot
+
+1. In the **Project Navigator**, locate and open `vw_hed_retention_risk_analysis.sql`
+   - This is an upstream dependency of the Semantic View
+2. Click the **Co-Pilot dropdown** in the editor
+3. Select **Generate Generic Test** from the dropdown menu
+4. Wait for Co-Pilot to process and generate the associated YAML configuration
+5. Review the generated test definitions
 ---
 
 ## Need Help?
