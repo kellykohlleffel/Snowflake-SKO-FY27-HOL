@@ -122,6 +122,61 @@ Welcome to the dbt Labs and Fivetran Hands-On Lab for Snowflake SKO FY27! In thi
 3. Select **Generate Generic Test** from the dropdown menu
 4. Wait for Co-Pilot to process and generate the associated YAML configuration
 5. Review the generated test definitions
+
+### 2.6 Save and Commit Changes
+
+1. Locate the **Git Integration button** in the top-left corner of dbt Platform
+2. Click the **Git Integration button** to commit and sync your changes
+3. Follow the prompts to commit your work
+4. Click to open a pull request in GitHub
+5. Review the PR (no need to merge - lab changes won't be merged)
+
+**Note:** This step saves your work and demonstrates the git workflow, but we won't be merging changes during the lab.
+
+### 2.7 Run a Production dbt Job
+
+1. In the left-hand menu, navigate to **Orchestration > Jobs**
+2. Locate and select the preconfigured **Prod Job** (running in the **Prod Environment**)
+3. Click **Settings** in the top right, then click **Edit**
+4. Update the **Execution commands**:
+   - Find the command that says `dbt build`
+   - Change it to: `dbt build --select source:hed+`
+   - This will only build models downstream of the Higher Education data source
+5. Ensure **Generate docs on run** is checked
+6. Click **Save** in the top right to save your changes
+
+### 2.8 Execute the Production Job
+
+1. Navigate back to the **Job Overview** page using the top navigation
+2. Click the **Run Now** button to execute the job
+3. Wait for the job to complete
+
+---
+
+## Step 3: Analyze Data with Snowflake Cortex
+
+Now that we've created the Snowflake Semantic View, you can interact with it using a preconfigured Cortex Agent in two ways:
+
+**Agent Details:**  
+For information about the agent configuration, see: [Snowflake Agent Config Reference](https://github.com/kellykohlleffel/Snowflake-SKO-FY27-HOL/blob/main/reference_docs/snowflake_agent_config.md)
+
+**Access Options:**
+
+1. **Option 1: Snowflake Intelligence** - [ai.snowflake.com](https://ai.snowflake.com)
+2. **Option 2: Snowflake Account Direct Access** - Log in to your Snowflake account
+
+**Prerequisites:**
+- Use credentials from the [lab credentials page](https://fivetran-lab.web.app/lab-credentials.html) for either access method
+
+### 3.1 Access the Cortex Agent
+
+1. Choose your preferred access method (Snowflake Intelligence or direct Snowflake login)
+2. Log in using credentials from the lab credentials page
+3. Locate the **HED_STUDENT_SUCCESS_AGENT_LAB** agent
+4. You can now ask questions about:
+   - Student retention
+   - At-risk students
+   - Suggested action plans
 ---
 
 ## Need Help?
