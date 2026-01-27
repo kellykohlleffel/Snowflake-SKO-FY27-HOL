@@ -74,7 +74,7 @@ Welcome to the dbt Labs and Fivetran Hands-On Lab for Snowflake SKO FY27! In thi
 
 ### 2.1 Register for dbt Cloud Workshop Account
 
-1. Navigate to the dbt Workshop registration page: [https://cloud.getdbt.com/coalesce-workshop-signup/](https://cloud.getdbt.com/coalesce-workshop-signup/)
+1. Navigate to the dbt Workshop registration page: [https://workshops.us1.dbt.com/workshop/](https://workshops.us1.dbt.com/workshop/)
 2. Fill in the registration form:
    - **First Name**: Your first name
    - **Last Name**: Your last name
