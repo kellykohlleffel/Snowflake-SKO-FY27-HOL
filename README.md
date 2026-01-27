@@ -2,6 +2,18 @@
 
 Welcome to the dbt Labs and Fivetran Hands-On Lab for Snowflake SKO FY27! In this workshop, you'll learn to move and activate data with Fivetran, transform it with dbt, and deliver insights in Snowflake.
 
+This hands-on lab is a **full-stack, end-to-end walkthrough of how modern data teams move from raw ingestion to AI-powered outcomes in Snowflake** without DIY pipelines, brittle logic, or disconnected tools.
+
+Snowflake SEs will **build a Snowflake AI-ready data flow in real time**: ingesting source data with Fivetran (PostgreSQL), transforming it into a **Cortex-ready semantic layer with dbt**, and activating it through **Snowflake Cortex Agents and Snowflake Intelligence**. Along the way, you'll see how this architecture delivers simplicity, speed to business outcomes, automated reliability, semantic consistency, and why this approach wins in the agentic era.
+
+The lab then shifts from how to build to **what’s new with Fivetran**:
+
+- How Fivetran is **activating data natively in Snowflake, with Fivetran Census**
+- Building **custom connectors** with the Fivetran Connector SDK
+- Moving toward a **single intelligent UI with MCP**
+
+We close with **what’s new from dbt Labs**, including the **Fusion Engine**, **emerging patterns for dbt + Snowflake AI** (Semantics, OSI, dbt MCP Server), and **how dbt fits directly within Snowflake**.
+
 ---
 
 <div style="background-color: #fff3cd; padding: 12px 16px; border-left: 6px solid #ffcc00; margin-bottom: 20px; margin-top: 10px;">
@@ -33,7 +45,7 @@ Welcome to the dbt Labs and Fivetran Hands-On Lab for Snowflake SKO FY27! In thi
 1. In Fivetran, click **+ Connector**
 2. Search for and select **Google Cloud PostgreSQL**
 3. Configure the connector:
-   - **Destination**: `HOL_DATABASE_1` (pre-configured)
+   - **Destination**: `Snowflake_SKO_HOL_27_dbt` (pre-configured)
    - **Snowflake Destination Virtual Warehouse**: Keep default
    - **Destination schema prefix**: `yourfirstname_yourlastname` (lowercase, underscores only)
    - **Destination schema names**: Fivetran naming
@@ -62,7 +74,7 @@ Welcome to the dbt Labs and Fivetran Hands-On Lab for Snowflake SKO FY27! In thi
 1. Navigate to Snowflake Lab Account using credentials from lab credentials page
 2. Log in with provided credentials
 3. In Snowflake UI, click **Catalog** in the left navigation
-4. Click on **HOL_DATABASE_1** database
+4. Click on **RAW** database
 6. Find your schema (e.g., `yourfirstname_yourlastname_higher_education`)
 7. Click **Tables**
 8. Click on **HED_RECORDS** table
