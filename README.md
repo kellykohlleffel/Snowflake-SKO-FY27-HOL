@@ -84,8 +84,111 @@ We close with **what’s new from dbt Labs**, including the **Fusion Engine**, *
 
 ## Step 2: Transform Data with dbt
 
-*Coming soon - instructor will guide this section*
+### 2.1 Register for dbt Cloud Workshop Account
 
+1. Navigate to the dbt Workshop registration page: [https://workshops.us1.dbt.com/workshop/](https://workshops.us1.dbt.com/workshop/)
+2. Fill in the registration form:
+   - **First Name**: Your first name
+   - **Last Name**: Your last name
+   - **Company Email**: Your email address
+   - **Workshop Selection**: Select **Snowflake SKO27 Hands-On Lab** from the dropdown
+   - **Workshop Passcode**: Enter the passcode from the [lab credentials page](https://fivetran-lab.web.app/lab-credentials.html)
+3. Click **Complete Registration** and wait for the success pop-up. It will include generated dbt Platform credentials for the workshop.
+4. Please record this crednetials for the reminder of the workshop, you may need them to log into dbt Platform.
+5. Click **Complete Registration** - if you are redirect to a login page use the automatically generated credentials above for access. 
+
+### 2.2 Access dbt Platform
+
+1. In dbt Platform, locate the **Project dropdown** on the left-hand side
+2. Select **Snowflake SKO (Higher Education)** from the dropdown
+3. Click **Studio** to load dbt Platform
+
+### 2.3 Explore dbt Packages Configuration
+
+1. In the **Project Navigator** (left sidebar), locate and open the `packages.yml` file
+2. Review the file contents and note how the `snowflake_semantic_view` package is defined
+   - This package enables dbt to create Snowflake Semantic Views
+3. For detailed information on this package and how it works, see: [https://hub.getdbt.com/Snowflake-Labs/dbt_semantic_view/latest/](https://hub.getdbt.com/Snowflake-Labs/dbt_semantic_view/latest/)
+
+**Understanding Package Management:**
+- When adding new packages, run `dbt deps` to install dependencies
+- This command creates or updates `package-lock.yml`, which records specific package versions
+- The lock file prevents compatibility issues when collaborating with other users
+
+### 2.4 Examine and Run dbt Models
+
+1. In the **Project Navigator**, expand the `models` folder
+2. Expand the `HED` subfolder (contains all Higher Education models)
+3. Open the `hed_at_risk_students.sql` file
+4. Review the code:
+   - This file contains the code to generate a Snowflake Semantic View
+   - Note how the syntax looks identical to executing it directly in Snowflake
+5. Click the **Run +model (Upstream)** button for this model to build the semantic view and its upstream dependencies it in your local Dev schema
+6. Wait for the model to complete successfully
+
+### 2.5 Generate Tests with dbt Co-Pilot
+
+1. In the **Project Navigator**, locate and open `vw_hed_retention_risk_analysis.sql`
+   - This is an upstream dependency of the Semantic View
+2. Click the **Co-Pilot dropdown** in the editor
+3. Select **Generate Generic Test** from the dropdown menu
+4. Wait for Co-Pilot to process and generate the associated YAML configuration
+5. Review the generated test definitions
+
+### 2.6 Save and Commit Changes
+
+1. Locate the **Git Integration button** in the top-left corner of dbt Platform
+2. Click the **Git Integration button** to commit and sync your changes
+3. Follow the prompts to commit your work
+4. Click to open a pull request in GitHub
+5. Review the PR (no need to merge - lab changes won't be merged)
+
+**Note:** This step saves your work and demonstrates the git workflow, but we won't be merging changes during the lab.
+
+### 2.7 Run a Production dbt Job
+
+1. In the left-hand menu, navigate to **Orchestration > Jobs**
+2. Locate and select the preconfigured **Prod Job** (running in the **Prod Environment**)
+3. Click **Settings** in the top right, then click **Edit**
+4. Update the **Execution commands**:
+   - Find the command that says `dbt build`
+   - Change it to: `dbt build --select source:hed+`
+   - This will only build models downstream of the Higher Education data source
+5. Ensure **Generate docs on run** is checked
+6. Click **Save** in the top right to save your changes
+
+### 2.8 Execute the Production Job
+
+1. Navigate back to the **Job Overview** page using the top navigation
+2. Click the **Run Now** button to execute the job
+3. Wait for the job to complete
+
+---
+
+## Step 3: Analyze Data with Snowflake Cortex
+
+Now that we've created the Snowflake Semantic View, you can interact with it using a preconfigured Cortex Agent in two ways:
+
+**Agent Details:**  
+For information about the agent configuration, see: [Snowflake Agent Config Reference](https://github.com/kellykohlleffel/Snowflake-SKO-FY27-HOL/blob/main/reference_docs/snowflake_agent_config.md)
+
+**Access Options:**
+
+1. **Option 1: Snowflake Intelligence** - [ai.snowflake.com](https://ai.snowflake.com)
+2. **Option 2: Snowflake Account Direct Access** - Log in to your Snowflake account
+
+**Prerequisites:**
+- Use credentials from the [lab credentials page](https://fivetran-lab.web.app/lab-credentials.html) for either access method
+
+### 3.1 Access the Cortex Agent
+
+1. Choose your preferred access method (Snowflake Intelligence or direct Snowflake login)
+2. Log in using credentials from the lab credentials page
+3. Locate the **HED_STUDENT_SUCCESS_AGENT_LAB** agent
+4. You can now ask questions about:
+   - Student retention
+   - At-risk students
+   - Suggested action plans
 ---
 
 ## Need Help?
