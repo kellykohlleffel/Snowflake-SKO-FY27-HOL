@@ -49,7 +49,7 @@ We close with **what’s new from dbt Labs**, including the **Fusion Engine**, *
    - **Snowflake Destination Virtual Warehouse**: Keep default
    - **Destination schema prefix**: `yourfirstname_yourlastname` (lowercase, underscores only)
    - **Destination schema names**: Fivetran naming
-   - **Host**: Use credentials from lab credentials page based on the first letter of your **Last Name**
+   - **Host**: Use credentials from lab credentials page based on the first letter of `yourlastname`
    - **Port**: `5432`
    - **User**: Use credentials from lab credentials page
    - **Password**: Use credentials from lab credentials page
