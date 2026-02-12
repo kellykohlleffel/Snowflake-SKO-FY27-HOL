@@ -32,7 +32,7 @@ We close with **what’s new from dbt Labs**, including the **Fusion Engine**, *
 ## Getting Started
 
 1. Register at [https://fivetran-lab.web.app/](https://fivetran-lab.web.app/)
-2. Check your email for your Fivetran invitation
+2. Check your email for your Fivetran invitation from `notifications@fivetran.com`
 3. Accept the invitation and set your password
 4. Get lab credentials: [https://fivetran-lab.web.app/lab-credentials.html](https://fivetran-lab.web.app/lab-credentials.html) (passcode provided by instructor)
 5. Log in to Fivetran and get ready to build!
