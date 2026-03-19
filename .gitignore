@@ -29,6 +29,9 @@ logs/
 profiles.yml
 !profiles.yml.example
 
+# Regional Events (in-progress, not public)
+regional_events/
+
 # IDE & Editor Config
 .vscode/
 .idea/
